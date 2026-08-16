@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DSA IQ 200 — a visual, interactive algorithm learning laboratory.">
+  <title>DSA IQ 200 — 10× Think</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <header class="topbar">
+    <a class="brand" href="#home"><span class="brand-mark">λ</span><span>DSA <b>IQ 200</b><small>10× THINK LAB</small></span></a>
+    <nav class="topnav">
+      <a href="#roadmap">Roadmap</a><a href="#visualizer">Visualizer</a><a href="#challenges">Challenges</a><a href="#progress">Progress</a>
+    </nav>
+    <button class="icon-btn" id="themeBtn" title="Toggle theme">◐</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="hero-copy">
+        <div class="eyebrow">INTERACTIVE DSA REASONING LABORATORY</div>
+        <h1>Learn algorithms.<br><span>Think 10× deeper.</span></h1>
+        <p>Understand → visualize → predict → debug → prove → optimize → build.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#visualizer">Start Learning</a>
+          <a class="btn ghost" href="#roadmap">Explore Roadmap</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong id="xpTop">0</strong><small>XP</small></div>
+          <div><strong id="levelTop">1</strong><small>LEVEL</small></div>
+          <div><strong>33+</strong><small>MODULES</small></div>
+          <div><strong>∞</strong><small>CHALLENGES</small></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="terminal-head"><span></span><span></span><span></span><b>reasoning.engine</b></div>
+        <div class="terminal-body">
+          <p><i>// predict the next state</i></p>
+          <p><b>array</b> = [10, 20, 30, 40]</p>
+          <p><b>target</b> = 30</p>
+          <p><b>i</b> = 1</p>
+          <p class="accent">→ What happens next?</p>
+          <div class="terminal-grid"><span>WHY</span><span>PREDICT</span><span>PROVE</span><span>OPTIMIZE</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section">
+      <div class="section-title"><div><span class="eyebrow">01 · CURRICULUM</span><h2>DSA mastery roadmap</h2><p>Start with the 10 foundations and progress toward expert algorithm design.</p></div><span class="badge">33 MODULES</span></div>
+      <div class="roadmap" id="roadmapGrid"></div>
+    </section>
+
+    <section id="visualizer" class="section">
+      <div class="section-title"><div><span class="eyebrow">02 · VISUAL ENGINE</span><h2>Algorithm execution lab</h2><p>Watch the state change one operation at a time.</p></div></div>
+      <div class="lab-grid">
+        <aside class="panel controls">
+          <label>Data structure</label>
+          <select id="structureSelect">
+            <option value="array">Array</option><option value="stack">Stack</option><option value="queue">Queue</option><option value="linked">Linked List</option>
+          </select>
+          <label>Algorithm</label>
+          <select id="algoSelect"><option value="linear">Linear Search</option><option value="bubble">Bubble Sort</option></select>
+          <label>Target</label>
+          <input id="targetInput" value="30" inputmode="numeric">
+          <div class="control-row"><button class="btn small" id="stepBtn">Step</button><button class="btn small primary" id="playBtn">Play</button><button class="btn small" id="resetBtn">Reset</button></div>
+          <div class="teacher-box">
+            <div class="teacher-head"><span>🧠 AI TEACHER</span><button id="speakBtn">🔊</button></div>
+            <p id="teacherText">Welcome. Predict what the algorithm will do before pressing Step.</p>
+          </div>
+          <div class="invariant"><b>Invariant</b><p id="invariantText">No elements have been proven yet.</p></div>
+        </aside>
+        <div class="panel stage">
+          <div class="stage-head"><b id="stageTitle">Array · Linear Search</b><span id="stepCounter">STEP 0</span></div>
+          <div id="visualCanvas" class="visual-canvas"></div>
+          <div class="state-strip"><div><span>STATE</span><b id="stateText">Ready</b></div><div><span>COMPLEXITY</span><b id="complexityText">O(n)</b></div><div><span>OPERATIONS</span><b id="opsText">0</b></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="challenges" class="section">
+      <div class="section-title"><div><span class="eyebrow">03 · IQ 200 ARENA</span><h2>Train reasoning, not memorization</h2><p>Predict, debug, prove and optimize.</p></div></div>
+      <div class="challenge-grid">
+        <article class="challenge-card"><span>01 · PREDICT</span><h3>Next-state challenge</h3><p>What will the pointer or data structure look like after the next operation?</p><button class="btn small" data-challenge="predict">Start</button></article>
+        <article class="challenge-card"><span>02 · DEBUG</span><h3>Find the hidden bug</h3><p>Locate the edge case that breaks an apparently correct algorithm.</p><button class="btn small" data-challenge="debug">Start</button></article>
+        <article class="challenge-card"><span>03 · COMPLEXITY</span><h3>Prove the complexity</h3><p>Explain why an algorithm is O(n), O(n log n), or O(n²).</p><button class="btn small" data-challenge="complexity">Start</button></article>
+        <article class="challenge-card"><span>04 · OPTIMIZE</span><h3>Beat the bottleneck</h3><p>Transform a brute-force solution into a scalable algorithm.</p><button class="btn small" data-challenge="optimize">Start</button></article>
+      </div>
+      <div id="challengePanel" class="panel challenge-panel hidden"></div>
+    </section>
+
+    <section id="progress" class="section">
+      <div class="section-title"><div><span class="eyebrow">04 · MASTERY</span><h2>Your reasoning profile</h2></div></div>
+      <div class="progress-grid">
+        <div class="panel mastery"><div class="mastery-ring"><b id="masteryScore">0</b><span>MASTERy</span></div><div><h3>DSA IQ profile</h3><p>Earn XP by completing lessons and reasoning challenges.</p><div class="bar"><i id="masteryBar"></i></div></div></div>
+        <div class="panel skills" id="skills"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><b>DSA IQ 200</b> · 10× Think Laboratory · GitHub Pages ready · Built for deep algorithmic reasoning.</footer>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
